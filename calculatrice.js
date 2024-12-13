@@ -28,3 +28,31 @@ class Calculat {
     return Math.sqrt(a);
   }
 }
+const calc = new Calculat();
+function calculator() {
+  console.log("\n°°°°°°Calculatrice°°°°°°");
+  console.log("1: Addition (+)");
+  console.log("2: Soustraction (-)");
+  console.log("3: Multiplication (*)");
+  console.log("4: Division (/)");
+  console.log("5: Puissance (^)");
+  console.log("6: Racine carrée (√)");
+  console.log("7: Quitter\n");
+  rl.question('Choisissez une option (1-7): ', (operateur) => {
+if (operateur == '7') {
+ console.log('Au revoir!');
+ rl.close();
+ return;
+ }
+if (operateur === '6') {  
+ rl.question('Entrez un nombre pour la racine carrée: ', (num) => {
+ const a = parseFloat(num);
+ const result = calc.sqrt(a);
+ console.log(`Résultat : ${result}`);
+calculator(); 
+});
+} else { 
+ rl.question('Entrez le premier nombre: ', (num1) => {
+ rl.question('Entrez le deuxième nombre: ', (num2) => {
+ const a = parseFloat(num1);
+ const b = parseFloat(num2);
