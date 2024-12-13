@@ -56,3 +56,40 @@ calculator();
  rl.question('Entrez le deuxième nombre: ', (num2) => {
  const a = parseFloat(num1);
  const b = parseFloat(num2);
+ let result;
+          switch (operateur) {
+            case '1':
+              result = calc.add(a, b);
+              console.log(`Résultat : ${result}`);
+              break;
+
+            case '2': 
+              result = calc.subtract(a, b);
+              console.log(`Résultat : ${result}`);
+              break;
+
+            case '3': 
+              result = calc.multiply(a, b);
+              console.log(`Résultat : ${result}`);
+              break;
+
+            case '4': 
+              result = calc.divide(a, b);
+              console.log(`Résultat : ${result}`);
+              break;
+
+            case '5': 
+              result = calc.power(a, b);
+              console.log(`Résultat : ${result}`);
+              break;
+
+            default:
+              console.log("Opérateur invalide !");
+          }
+          calculator();
+        });
+      });
+    }
+  });
+}
+calculator();
